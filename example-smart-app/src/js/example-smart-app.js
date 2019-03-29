@@ -59,6 +59,7 @@
           if (typeof reqproc != 'undefined') {
             window.alert("typeof reqproc[0] =" + (typeof reqproc[0]));
             if (typeof reqproc[0] != 'undefined') {
+              window.alert("typeof reqproc[0].reasonCodeableConcept =" + (typeof reqproc[0].reasonCodeableConcept));
               reason = reqproc[0].reasonCodeableConcept;
             }
           }
