@@ -54,7 +54,10 @@
           
           var reason = 'test';
           
+          window.alert("typeof reqproc =" + (typeof reqproc));
+          
           if (typeof reqproc != 'undefined') {
+            window.alert("typeof reqproc[0] =" + (typeof reqproc[0]));
             if (typeof reqproc[0] != 'undefined') {
               reason = reqproc[0].reasonCodeableConcept;
             }
