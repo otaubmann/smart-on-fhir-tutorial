@@ -103,6 +103,7 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);          
           p.reason = reason;
+          p.reports = reportsString;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -139,6 +140,7 @@
       ldl: {value: ''},
       hdl: {value: ''},
       reason: {value: ''},
+      reports: {value: ''},
     };
   }
 
@@ -183,6 +185,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#reason').html(p.reason);
+    $('#report').html(p.reports);
   };
 
 })(window);
