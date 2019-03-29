@@ -28,10 +28,14 @@
                     query: {}
                   });
         
+        var reports = smart.patient.api.fetchAll({
+                    type: 'DiagnosticReport',
+                    query: {}
+                  });
         
-        $.when(pt, obv, reqproc).fail(onError);
+        $.when(pt, obv, reqproc, reports).fail(onError);
 
-        $.when(pt, obv, reqproc).done(function(patient, obv, reqproc) {
+        $.when(pt, obv, reqproc, reports).done(function(patient, obv, reqproc, reports) {
           var byCodes = smart.byCodes(obv, 'code');
           /*
           var byCodesReqProc = smart.byCodes(reqproc, 'code');
@@ -56,6 +60,8 @@
           
           if (typeof reqproc != 'undefined') {
             
+            console.log('reqproc object', reqproc);
+            
             for (var i = 0; i < reqproc.length; i++) {
               reason += reqproc[i].text.div;
               
@@ -63,8 +69,17 @@
                 window.alert("Found a reason for requested procedure: " + reqproc[i].reasonCodeableConcept)
               }
             } 
-
-            console.log('reqproc object', reqproc);
+          }
+          
+          var reportsString = '';
+          
+          if (typeof reports != 'undefined') {
+            
+            console.log('reports object', reports);
+            
+            for (var i = 0; i < reports.length; i++) {
+              reportsString += reports[i].text.div;
+            }
           }
           /*
           window.alert("typeof reqproc =" + (typeof reqproc));
