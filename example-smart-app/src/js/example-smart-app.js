@@ -52,15 +52,15 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           
-          var reason = 'test';
+          var reason = '';
           
           if (typeof reqproc != 'undefined') {
-            console.log('reqproc object', reqproc);
-            /*
-            for (var rp in reqproc) {
-              window.alert(typeof rp.code + ": " + rp.code);
+            
+            for (var i = 0; i < reqproc.length; i++) {
+              reason += reqproc[i].text.div;
             }
-            */
+
+            console.log('reqproc object', reqproc);
           }
           /*
           window.alert("typeof reqproc =" + (typeof reqproc));
