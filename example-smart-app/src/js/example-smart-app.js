@@ -54,7 +54,7 @@
           
           var reason = 'test';
           
-          window.alert(reqproc.size.toString())
+          window.alert(reqproc.toString())
           
           /*
           if (reqproc.size > 0) {
