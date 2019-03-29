@@ -54,6 +54,8 @@
           
           var reason = 'test';
           
+          window.alert(reqproc.size.toString())
+          
           /*
           if (reqproc.size > 0) {
             if (typeof reqproc[0] != 'undefined') {
