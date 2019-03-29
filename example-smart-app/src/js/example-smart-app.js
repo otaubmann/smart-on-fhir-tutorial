@@ -66,8 +66,6 @@
             }
           }
           
-          window.alert(reason);
-          
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
           p.gender = gender;
