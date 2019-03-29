@@ -71,6 +71,8 @@
                 console.log("Found a reason for requested procedure at index " + i);
                 */
               }
+              
+              reason += '\n'
             } 
           }
           
