@@ -22,10 +22,15 @@
                     }
                   });
 
-        $.when(pt, obv).fail(onError);
+        var reqproc = smart.patient.api.fetchAll({
+                    type: 'RequestedProcedure'
+                  });
+        
+        $.when(pt, obv, reqproc).fail(onError);
 
-        $.when(pt, obv).done(function(patient, obv) {
+        $.when(pt, obv, reqproc).done(function(patient, obv, reqproc) {
           var byCodes = smart.byCodes(obv, 'code');
+          var byCodesReqProc = smart.byCodes(reqproc, 'code');
           var gender = patient.gender;
 
           var fname = '';
@@ -41,6 +46,14 @@
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
+          
+          var reason = ''
+          
+          if (reqproc.size > 0) {
+            if (typeof reqproc[0] != 'undefined') {
+              reason = reqproc[0].reasonCodeableConcept
+            }
+          }
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
@@ -48,6 +61,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
+          p.reason = reason
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -83,6 +97,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      reason: {value: ''},
     };
   }
 
@@ -126,6 +141,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    $('#reason').html(p.reason);
   };
 
 })(window);
