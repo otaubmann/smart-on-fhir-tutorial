@@ -47,11 +47,11 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           
-          var reason = 'test'
+          var reason = 'test';
           
           //if (reqproc.size > 0) {
           //  if (typeof reqproc[0] != 'undefined') {
-          //    reason = reqproc[0].reasonCodeableConcept
+          //    reason = reqproc[0].reasonCodeableConcept;
           //  }
           //}
 
