@@ -21,16 +21,20 @@
                       }
                     }
                   });
-
-        //var reqproc = smart.patient.api.fetchAll({
-        //            type: 'RequestedProcedure'
-        //          });
+        
+        /*
+        var reqproc = smart.patient.api.fetchAll({
+                    type: 'RequestedProcedure'
+                  });
+        */
         
         $.when(pt, obv/*, reqproc*/).fail(onError);
 
         $.when(pt, obv/*, reqproc*/).done(function(patient, obv/*, reqproc*/) {
           var byCodes = smart.byCodes(obv, 'code');
-          //var byCodesReqProc = smart.byCodes(reqproc, 'code');
+          /*
+          var byCodesReqProc = smart.byCodes(reqproc, 'code');
+          */
           var gender = patient.gender;
 
           var fname = '';
@@ -47,21 +51,25 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           
-          //var reason = 'test';
+          /*
+          var reason = 'test';
           
-          //if (reqproc.size > 0) {
-          //  if (typeof reqproc[0] != 'undefined') {
-          //    reason = reqproc[0].reasonCodeableConcept;
-          //  }
-          //}
-
+          if (reqproc.size > 0) {
+            if (typeof reqproc[0] != 'undefined') {
+              reason = reqproc[0].reasonCodeableConcept;
+            }
+          }
+          */
+          
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
           p.gender = gender;
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
-          //p.reason = reason;
+          /*
+          p.reason = reason;
+          */
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -97,7 +105,9 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
-      //reason: {value: ''},
+      /*
+      reason: {value: ''},
+      */
     };
   }
 
@@ -141,7 +151,9 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    //$('#reason').html(p.reason);
+    /*
+    $('#reason').html(p.reason);
+    */
   };
 
 })(window);
