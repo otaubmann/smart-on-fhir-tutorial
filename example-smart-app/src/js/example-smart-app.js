@@ -55,9 +55,12 @@
           var reason = 'test';
           
           if (typeof reqproc != 'undefined') {
+            console.log('reqproc object', reqproc);
+            /*
             for (var rp in reqproc) {
               window.alert(typeof rp.code + ": " + rp.code);
             }
+            */
           }
           /*
           window.alert("typeof reqproc =" + (typeof reqproc));
