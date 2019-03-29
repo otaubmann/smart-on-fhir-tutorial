@@ -56,7 +56,7 @@
           
           if (typeof reqproc != 'undefined') {
             for (var rp in reqproc) {
-              window.alert(rp.code.toString());
+              window.alert(typeof rp.code + ": " + rp.code);
             }
           }
           /*
