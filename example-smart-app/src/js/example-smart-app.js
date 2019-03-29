@@ -66,7 +66,7 @@
               reason += reqproc[i].text.div;
               
               if (typeof reqproc[i].reasonCodeableConcept != 'undefined') {
-                window.alert("Found a reason for requested procedure: " + reqproc[i].reasonCodeableConcept)
+                console.log("Found a reason for requested procedure at index " + i);
               }
             } 
           }
