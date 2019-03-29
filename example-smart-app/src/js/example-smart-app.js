@@ -28,9 +28,9 @@
                   });
         
         
-        $.when(pt, obv, reqproc).fail(onError);
+        $.when(pt, obv/*, reqproc*/).fail(onError);
 
-        $.when(pt, obv, reqproc).done(function(patient, obv, reqproc) {
+        $.when(pt, obv/*, reqproc*/).done(function(patient, obv/*, reqproc*/) {
           var byCodes = smart.byCodes(obv, 'code');
           /*
           var byCodesReqProc = smart.byCodes(reqproc, 'code');
