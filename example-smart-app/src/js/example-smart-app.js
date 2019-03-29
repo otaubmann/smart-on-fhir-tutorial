@@ -58,7 +58,11 @@
             
             for (var i = 0; i < reqproc.length; i++) {
               reason += reqproc[i].text.div;
-            }
+              
+              if (typeof reqproc[i].reasonCodeableConcept != 'undefined') {
+                window.alert("Found a reason for requested procedure: " + reqproc[i].reasonCodeableConcept)
+              }
+            } 
 
             console.log('reqproc object', reqproc);
           }
