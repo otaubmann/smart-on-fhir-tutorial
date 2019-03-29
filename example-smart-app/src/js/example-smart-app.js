@@ -72,7 +72,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);          
-          p.reason = reqproc.size.toString();
+          p.reason = reqproc.size;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
