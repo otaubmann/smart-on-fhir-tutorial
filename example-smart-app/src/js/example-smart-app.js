@@ -54,15 +54,11 @@
           
           var reason = 'test';
           
-          window.alert(reqproc.toString())
-          
-          /*
-          if (reqproc.size > 0) {
+          if (typeof reqproc != 'undefined') {
             if (typeof reqproc[0] != 'undefined') {
               reason = reqproc[0].reasonCodeableConcept;
             }
           }
-          */
           
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
