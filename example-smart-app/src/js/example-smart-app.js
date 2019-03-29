@@ -60,6 +60,8 @@
           
           var reason = 'test';
           
+          window.alert(reqproc.size);
+          
           if (reqproc.size > 0) {
             if (typeof reqproc[0] != 'undefined') {
               reason = reqproc[0].reasonCodeableConcept;
@@ -72,7 +74,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);          
-          p.reason = reqproc.size;
+          p.reason = reason;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
