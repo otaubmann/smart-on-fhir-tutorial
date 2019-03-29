@@ -39,9 +39,9 @@
 
         $.when(pt, obv, reqproc).done(function(patient, obv, reqproc) {
           var byCodes = smart.byCodes(obv, 'code');
-          
+          /*
           var byCodesReqProc = smart.byCodes(reqproc, 'code');
-          
+          */
           var gender = patient.gender;
 
           var fname = '';
@@ -60,11 +60,13 @@
           
           var reason = 'test';
           
+          /*
           if (reqproc.size > 0) {
             if (typeof reqproc[0] != 'undefined') {
               reason = reqproc[0].reasonCodeableConcept;
             }
           }
+          */
           
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
