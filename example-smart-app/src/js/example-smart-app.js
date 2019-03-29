@@ -60,13 +60,13 @@
           
           var reason = 'test';
           
-          window.alert(reqproc.size);
-          
           if (reqproc.size > 0) {
             if (typeof reqproc[0] != 'undefined') {
               reason = reqproc[0].reasonCodeableConcept;
             }
           }
+          
+          window.alert(reason);
           
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
