@@ -54,6 +54,12 @@
           
           var reason = 'test';
           
+          if (typeof reqproc != 'undefined') {
+            for (var rp in reqproc) {
+              window.alert(rp.code.toString());
+            }
+          }
+          /*
           window.alert("typeof reqproc =" + (typeof reqproc));
           
           if (typeof reqproc != 'undefined') {
@@ -66,6 +72,7 @@
               reason = reqproc[0].reasonCodeableConcept;
             }
           }
+          */
           
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
