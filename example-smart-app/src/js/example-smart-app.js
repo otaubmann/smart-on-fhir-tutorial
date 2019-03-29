@@ -24,7 +24,7 @@
         
         
         var reqproc = smart.patient.api.fetchAll({
-                    type: 'RequestedProcedure',
+                    type: 'ProcedureRequest',
                     query: {}
                   });
         
