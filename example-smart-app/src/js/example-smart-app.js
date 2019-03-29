@@ -72,7 +72,7 @@
                 */
               }
               
-              reason += '\n'
+              reason += '<br><br>'
             } 
           }
           
