@@ -66,7 +66,10 @@
               reason += reqproc[i].text.div;
               
               if (typeof reqproc[i].reasonCodeableConcept != 'undefined') {
+                reason += JSON.stringify(reqproc[i].reasonCodeableConcept, null, 4);
+                /*
                 console.log("Found a reason for requested procedure at index " + i);
+                */
               }
             } 
           }
