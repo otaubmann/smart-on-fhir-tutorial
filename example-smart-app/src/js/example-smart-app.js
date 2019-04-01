@@ -84,7 +84,23 @@
             
             for (var i = 0; i < reports.length; i++) {
               reportsString += reports[i].text.div;
-            }
+              
+              if (reports[i].presentedForm != 'undefined') {
+                for (var j = 0; j < reports[i].presentedForm; j++) {
+                  if (reports[i].presentedForm.contentType == 'text/html') {
+                    var url = reports[i].presentedForm.url;
+                    
+                    if (url != 'undefined') {
+                      $.get( url, function( data ) {
+                        var reportText = data;
+                        window.alert(reportText);
+                      });
+                    }
+                    
+                  }
+                }
+              }
+            }            
           }
           /*
           window.alert("typeof reqproc =" + (typeof reqproc));
