@@ -89,19 +89,21 @@
                 console.log('Found presentedForm for report ' + i);
                 
                 for (var j = 0; j < reports[i].presentedForm.length; j++) {
-                  console.log('Presented form ' + j + ' content type: ' + reports[i].presentedForm[j].contentType);
-                  if (reports[i].presentedForm[j].contentType == 'text/html') {
-                    var url = reports[i].presentedForm[j].url;
-                    console.log('URL: ' + url);
+                  if (reports[i].presentedForm[j].contentType != 'undefined') {
+                    console.log('Presented form ' + j + ' content type: ' + reports[i].presentedForm[j].contentType);  
                     
-                    /*
-                    if (url != 'undefined') {
-                      $.get( url, function( data ) {
-                        var reportText = data;
-                        window.alert(reportText);
-                      });
+                    if (reports[i].presentedForm[j].contentType == 'text/html') {
+                      var url = reports[i].presentedForm[j].url;
+                      console.log('URL: ' + url);
+                    
+                      /*
+                      if (url != 'undefined') {
+                       $.get( url, function( data ) {
+                         var reportText = data;
+                         window.alert(reportText);
+                       });
+                       */
                     } 
-                    */
                   }
                 }
               }
