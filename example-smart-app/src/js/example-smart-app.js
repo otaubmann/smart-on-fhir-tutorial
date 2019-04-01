@@ -87,8 +87,8 @@
               
               if (reports[i].presentedForm != 'undefined') {
                 for (var j = 0; j < reports[i].presentedForm; j++) {
-                  if (reports[i].presentedForm.contentType == 'text/html') {
-                    var url = reports[i].presentedForm.url;
+                  if (reports[i].presentedForm[j].contentType == 'text/html') {
+                    var url = reports[i].presentedForm[j].url;
                     
                     if (url != 'undefined') {
                       $.get( url, function( data ) {
