@@ -86,9 +86,12 @@
               reportsString += reports[i].text.div;
               
               if (reports[i].presentedForm != 'undefined') {
+                console.log('Found presentedForm for report ' + i);
                 for (var j = 0; j < reports[i].presentedForm; j++) {
+                  console.log('Presented form ' + j + ' content type: ' + reports[i].presentedForm[j].contentType);
                   if (reports[i].presentedForm[j].contentType == 'text/html') {
                     var url = reports[i].presentedForm[j].url;
+                    console.log('URL: ' + url);
                     
                     if (url != 'undefined') {
                       $.get( url, function( data ) {
