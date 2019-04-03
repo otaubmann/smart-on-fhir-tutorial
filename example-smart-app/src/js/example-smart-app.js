@@ -115,8 +115,7 @@
                           return;
                         }
                         var reportText = this.responseText;
-                        window.alert(reportText);
-                        reportsString += reportText;
+                        reportsString += "<pre>" + reportText + "</pre>";
                       };
                       /* console.log(xhr); */
                       xhr.send();
