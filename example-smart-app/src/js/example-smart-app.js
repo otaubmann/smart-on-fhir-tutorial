@@ -8,6 +8,7 @@
     }
 
     function onReady(smart)  {
+      console.log(arguments);
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
@@ -106,6 +107,7 @@
                       var xhr= new XMLHttpRequest();
                       xhr.open('GET', url, true);
                       xhr.setRequestHeader("Accept", "text/html");
+                      /* xhr.setRequestHeader("Authorization", "Bearer " + /*access_token*/); */
                       xhr.onreadystatechange = function() {
                         if (this.readyState !== 4) return;
                         if (this.status !== 200) {
