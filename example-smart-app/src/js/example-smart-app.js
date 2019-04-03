@@ -118,7 +118,7 @@
                         window.alert(reportText);
                         reportsString += reportText;
                       };
-                      console.log(xhr);
+                      /* console.log(xhr); */
                       xhr.send();
                     } 
                   }
