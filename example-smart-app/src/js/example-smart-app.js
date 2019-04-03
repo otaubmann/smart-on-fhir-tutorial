@@ -108,7 +108,7 @@
                       var xhr= new XMLHttpRequest();
                       xhr.open('GET', url, true);
                       xhr.setRequestHeader("Accept", "text/html");
-                      /* xhr.setRequestHeader("Authorization", "Bearer " + access_token); */
+                      xhr.setRequestHeader("Authorization", "Bearer " + smart.tokenResponse.access_token);
                       xhr.onreadystatechange = function() {
                         if (this.readyState !== 4) return;
                         if (this.status !== 200) {
