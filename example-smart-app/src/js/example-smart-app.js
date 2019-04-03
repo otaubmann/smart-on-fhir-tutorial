@@ -116,7 +116,7 @@
                         }
                         var reportText = this.responseText;
                         reportsString += "<pre>" + reportText + "</pre>";
-                        console.log(reportText);
+                        /* console.log(reportText); */
                       };
                       /* console.log(xhr); */
                       xhr.send();
@@ -124,7 +124,7 @@
                   }
                 }
               }
-              reportsString += '<br><br>'
+              reportsString += '<br><br><hr>'
             }            
           }
           /*
