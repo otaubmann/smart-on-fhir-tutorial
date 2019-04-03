@@ -108,7 +108,7 @@
                       xhr.onreadystatechange = function() {
                         if (this.readyState !== 4) return;
                         if (this.status !== 200) {
-                          window.alert("Error fetching URL, status = " + this.status);
+                          console.log("Error fetching URL, status = " + this.status);
                           return; // or whatever error handling you want
                         }
                         var reportText = this.responseText;
