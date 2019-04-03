@@ -117,6 +117,7 @@
                         }
                         var reportText = this.responseText;
                       };
+                      console.log(xhr);
                       xhr.send();
                     } 
                   }
