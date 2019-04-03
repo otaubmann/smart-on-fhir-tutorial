@@ -104,6 +104,7 @@
                        });
                       */
                       var xhr= new XMLHttpRequest();
+                      xhr.setRequestHeader("Accept", "text/html");
                       xhr.open('GET', url, true);
                       xhr.onreadystatechange = function() {
                         if (this.readyState !== 4) return;
