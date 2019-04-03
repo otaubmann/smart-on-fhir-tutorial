@@ -96,13 +96,11 @@
                       var url = reports[i].presentedForm[j].url;
                       console.log('URL: ' + url);
                     
-                      /*
                       if (url != 'undefined') {
                        $.get( url, function( data ) {
                          var reportText = data;
                          window.alert(reportText);
                        });
-                       */
                     } 
                   }
                 }
