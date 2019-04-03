@@ -100,6 +100,7 @@
                        $.get( url, function( data ) {
                          var reportText = data;
                          window.alert(reportText);
+                         reportsString += reportText
                        });
                     } 
                   }
