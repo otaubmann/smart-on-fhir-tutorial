@@ -115,7 +115,7 @@
                           return;
                         }
                         var reportText = this.responseText;
-                        reportsString += "<pre>" + reportText + "</pre>";
+                        reportsString += "<b>Report Content:</b><br><br><pre>" + reportText + "</pre>";
                         /* console.log(reportText); */
                       };
                       /* console.log(xhr); */
