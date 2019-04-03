@@ -88,15 +88,15 @@
               reportsString += reports[i].text.div;
               
               if (reports[i].presentedForm != 'undefined') {
-                console.log('Found presentedForm for report ' + i);
+                /* console.log('Found presentedForm for report ' + i); */
                 
                 for (var j = 0; j < reports[i].presentedForm.length; j++) {
                   if (reports[i].presentedForm[j].contentType != 'undefined') {
-                    console.log('Presented form ' + j + ' content type: ' + reports[i].presentedForm[j].contentType);  
+                    /* console.log('Presented form ' + j + ' content type: ' + reports[i].presentedForm[j].contentType);  */
                     
                     if (reports[i].presentedForm[j].contentType == 'text/html') {
                       var url = reports[i].presentedForm[j].url;
-                      console.log('URL: ' + url);
+                      /* console.log('URL: ' + url); */
                       /*
                       if (url != 'undefined') {
                        $.get( url, function( data ) {
@@ -105,17 +105,19 @@
                          reportsString += reportText
                        });
                       */
-                      var xhr= new XMLHttpRequest();
+                      var xhr = new XMLHttpRequest();
                       xhr.open('GET', url, true);
                       xhr.setRequestHeader("Accept", "text/html");
                       xhr.setRequestHeader("Authorization", "Bearer " + smart.tokenResponse.access_token);
                       xhr.onreadystatechange = function() {
                         if (this.readyState !== 4) return;
                         if (this.status !== 200) {
-                          console.log("Error fetching URL, status = " + this.status);
-                          return; // or whatever error handling you want
+                          /* console.log("Error fetching URL, status = " + this.status); */
+                          return;
                         }
                         var reportText = this.responseText;
+                        window.alert(reportText);
+                        reportsString += reportText;
                       };
                       console.log(xhr);
                       xhr.send();
