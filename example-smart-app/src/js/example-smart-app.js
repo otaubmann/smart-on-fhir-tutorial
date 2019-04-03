@@ -101,8 +101,7 @@
                       if (url != 'undefined') {
                        $.get( url, function( data ) {
                          var reportText = data;
-                         window.alert(reportText);
-                         reportsString += reportText
+                         reportsString += "<pre>" + reportText + "</pre>";
                        });
                       */
                       var xhr = new XMLHttpRequest();
