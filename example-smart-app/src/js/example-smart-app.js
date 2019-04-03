@@ -7,10 +7,7 @@
       ret.reject();
     }
 
-    function onReady(smart)  {
-      
-      console.log('Server response', arguments);
-      
+    function onReady(smart)  {      
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
