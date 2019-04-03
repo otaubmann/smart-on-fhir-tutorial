@@ -105,7 +105,7 @@
                        });
                       */
                       var xhr = new XMLHttpRequest();
-                      xhr.open('GET', url, true);
+                      xhr.open('GET', url, false);
                       xhr.setRequestHeader("Accept", "text/html");
                       xhr.setRequestHeader("Authorization", "Bearer " + smart.tokenResponse.access_token);
                       xhr.onreadystatechange = function() {
