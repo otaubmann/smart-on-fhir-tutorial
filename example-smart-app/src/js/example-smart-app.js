@@ -95,13 +95,25 @@
                     if (reports[i].presentedForm[j].contentType == 'text/html') {
                       var url = reports[i].presentedForm[j].url;
                       console.log('URL: ' + url);
-                    
+                      /*
                       if (url != 'undefined') {
                        $.get( url, function( data ) {
                          var reportText = data;
                          window.alert(reportText);
                          reportsString += reportText
                        });
+                      */
+                      var xhr= new XMLHttpRequest();
+                      xhr.open('GET', url, true);
+                      xhr.onreadystatechange = function() {
+                        if (this.readyState !== 4) return;
+                        if (this.status !== 200) {
+                          window.alert("Error fetching URL, status = " + this.status);
+                          return; // or whatever error handling you want
+                        }
+                        var reportText = this.responseText;
+                      };
+                      xhr.send();
                     } 
                   }
                 }
